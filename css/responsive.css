@@ -1,26 +1,485 @@
+:root {
+  --turquoise: #3CB0B8;
+  /* Color principal: verde turquesa */
+  --turquoise-dark: #004d55;
+  /* Turquesa oscuro para el hover */
+  --white: #fff;
+  /* Blanco para letras */
+  --light-gray: #f9f9f9;
+  /* Fondo claro para fondos */
+  --gray: #666;
+  /* Texto gris para texto*/
+  --dark-gray: #333;
+  /* Texto oscuro opcional para mas texto*/
+  --black: #000;
+  --shadow: rgba(0, 0, 0, 0.1);
+  /* Sombra ligera para elementos que lo requiera */
+}
+
 @media (max-width: 430px) {
-    .menu-toggle {
-      display: block; /* Mostrar el botón hamburguesa */
-    }
-  
-    .navbar-nav {
-      display: none; /* Ocultar el menú por defecto */
-      width: 100%;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .navbar-nav.show {
-      display: flex; /* Mostrar el menú cuando se active */
-    }
-  
-    .navbar-nav ul {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .navbar-nav ul li {
-      margin: 10px 0;
+  .navbar {
+    background-color: var(--turquoise);
+    color: var(--white);
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--white);
+    cursor: pointer;
+    z-index: 15;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--turquoise);
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .navbar-nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav ul li a:hover {
+    color: var(--turquoise-dark);
+  }
+
+  /* rslides responsive */
+
+  .rslides {
+    height: 500px;
+  }
+
+  .rslides img {
+    object-fit: cover;
+
+  }
+
+  .info {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .info h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--turquoise);
+  }
+
+  .btn-join-now {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .rslides_nav.prev,
+  .rslides_nav.next {
+    font-size: 2rem;
+    padding: 5px;
+  }
+
+  .rslides_nav.prev {
+    left: 2%;
+  }
+
+  .rslides_nav.next {
+    right: 2%;
+  }
+
+  .services-header {
+    padding: 1.5rem 0;
+  }
+
+  .services-header h2 {
+    font-size: 1.5rem;
+  }
+
+  /* servicios */
+
+  .service-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .service-item {
+    max-width: 90%;
+    padding: 1rem;
+    box-shadow: 0 2px 4px var(--shadow);
+  }
+
+  .icon-container {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.8rem;
+  }
+
+  .icon-container i {
+    font-size: 1.5rem;
+  }
+
+  .service-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .service-item p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  /* seccion con efecto y paralax */
+
+  .effect-background {
+    background-attachment: fixed;
+    /* Activa parallax */
+  }
+
+  .effect-container {
+    max-width: 430px;
+    flex-direction: column;
+    /* Elementos en columna */
+  }
+
+  .effect-left,
+  .effect-right {
+    flex: unset;
+    width: 100%;
+    /* Cada uno toma el ancho completo */
+    height: auto;
+    /* Ajusta la altura al contenido */
+  }
+
+  .effect-left {
+    padding: 20px;
+    /* Reduce el padding */
+  }
+
+  .effect-left h1 {
+    font-size: 1.5rem;
+    /* Reducir tamaño de texto */
+  }
+
+  .effect-left p {
+    font-size: 0.9rem;
+  }
+
+  /* carousel */
+  .contenedor-principal {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .contenedor-secundario {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .slide {
+    max-width: 100%;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .imgentest {
+    margin-bottom: 15px;
+  }
+
+  .icon-section {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .testimonial-text {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  button.position {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
+
+  .slide-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .slide-indicators {
+    display: none;
+  }
+
+  /* seccion con modal */
+
+  .we-carry-safely {
+    .container {
+      padding: 20px 10px;
+
+      .section-title {
+        font-size: 24px;
+        padding: 15px 0;
+      }
+
+      .content {
+        flex-direction: column;
+
+        .image-container {
+          max-width: 100%;
+          padding-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .text-container {
+          max-width: 100%;
+          padding-left: 0;
+          text-align: center;
+
+          .subtitle {
+            font-size: 18px;
+          }
+
+          p {
+            font-size: 14px;
+          }
+
+          .cta-button {
+            font-size: 14px;
+            padding: 8px 16px;
+          }
+        }
+      }
     }
   }
-  
+
+  .modal-content {
+    width: 90%;
+    /* Ajusta el ancho en pantallas pequeñas */
+    padding: 15px;
+    /* Reduce padding para espacio limitado */
+  }
+
+  .modal {
+    padding: 10px;
+    /* Asegura espacio alrededor */
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .close-button {
+    font-size: 16px;
+  }
+
+  form {
+    .form-group {
+
+      input,
+      textarea {
+        width: 100%;
+      }
+    }
+
+    .cta-button {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  }
+
+  /* seccion clientes */
+
+  .customers-header h2 {
+    font-size: 20px;
+  }
+
+  .customers-header p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .customers-logos {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas en vez de 5 */
+    gap: 15px;
+    /* Espacio más pequeño entre logos */
+  }
+
+  .customers-logos img {
+    max-width: 100px;
+    /* Logos más pequeños */
+    max-height: 70px;
+  }
+
+  /* seccion noticias */
+
+  .news-section h2 {
+    font-size: 20px;
+    /* Reducir tamaño de encabezado */
+    margin-bottom: 15px;
+  }
+
+  .news-section p {
+    font-size: 14px;
+    /* Reducir tamaño del texto */
+    margin-bottom: 15px;
+  }
+
+  .news-container {
+    flex-direction: column;
+    /* Cambiar a diseño vertical */
+    gap: 15px;
+    /* Ajustar espacio entre tarjetas */
+  }
+
+  .news-card {
+    width: 100%;
+    /* Tarjetas ocupan todo el ancho disponible */
+    max-width: 300px;
+    margin: 0 auto;
+    /* Centrar tarjetas */
+  }
+
+  .news-card img {
+    height: 150px;
+    /* Ajustar altura de las imágenes */
+  }
+
+  .news-content h3 {
+    font-size: 16px;
+    /* Reducir tamaño de los títulos */
+  }
+
+  .news-content p {
+    font-size: 12px;
+    /* Reducir tamaño del texto */
+  }
+
+  .news-content button {
+    padding: 8px 16px;
+    /* Botones más pequeños */
+    font-size: 12px;
+  }
+
+  /* footer */
+
+  .footer-container {
+    flex-direction: column;
+    /* Cambiar disposición a columna */
+    align-items: center;
+    /* Centrar contenido */
+    gap: 15px;
+    /* Espaciado entre secciones */
+    padding: 10px;
+    /* Reducir padding general */
+  }
+
+  .footer-section h4 {
+    font-size: 16px;
+    /* Reducir tamaño del título */
+    margin-bottom: 8px;
+  }
+
+  .footer-section p {
+    font-size: 12px;
+    /* Reducir tamaño del texto */
+    text-align: center;
+    /* Centrar texto */
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    /* Reducir tamaño del texto inferior */
+    padding-top: 8px;
+    /* Ajustar espacio superior */
+    margin-top: 15px;
+    /* Reducir margen superior */
+  }
+
+/* BOTON STICKY */
+
+.sticky-button {
+  position: fixed;
+  bottom: 20px; /* Distancia desde el borde inferior */
+  right: 20px; /* Distancia desde el borde derecho */
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%; /* Redondear el botón */
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Asegurar que se quede encima de otros elementos */
+}
+
+.sticky-button img {
+  width: 30px;
+  height: 30px;
+}
+
+.sticky-button:hover {
+  background-color: #f0f0f0;
+}
+
+}

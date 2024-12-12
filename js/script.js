@@ -129,9 +129,10 @@ $(document).ready(function() {
 
 /* menu responsive con jquery */
 
-  $(document).ready(function () {
-    // Alternar el menú al hacer clic en el botón hamburguesa
-    $(".menu-toggle").click(function () {
-      $(".navbar-nav").toggleClass("show");
-    });
-  });
+const menuToggle = document.querySelector('.menu-toggle');
+const navbarNav = document.querySelector('.navbar-nav');
+
+// Agregar evento para alternar el menú
+menuToggle.addEventListener('click', () => {
+  navbarNav.classList.toggle('active');
+});
