@@ -92,37 +92,37 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $(".accordion-title").on("click", function () {
-      // Cerrar otros acordeones
-      $(".accordion-item").not($(this).parent()).removeClass("active").find(".accordion-content").css("max-height", "0");
-      
-      // Alternar el acordeón actual
-      const parent = $(this).parent();
-      parent.toggleClass("active");
-      const content = parent.find(".accordion-content");
-      if (parent.hasClass("active")) {
-          content.css("max-height", content.prop("scrollHeight") + "px");
-      } else {
-          content.css("max-height", "0");
-      }
+    // Cerrar otros acordeones
+    $(".accordion-item").not($(this).parent()).removeClass("active").find(".accordion-content").css("max-height", "0");
+
+    // Alternar el acordeón actual
+    const parent = $(this).parent();
+    parent.toggleClass("active");
+    const content = parent.find(".accordion-content");
+    if (parent.hasClass("active")) {
+      content.css("max-height", content.prop("scrollHeight") + "px");
+    } else {
+      content.css("max-height", "0");
+    }
   });
 });
 
 
 /* boton para ir hacia arriba */
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Mostrar el botón solo cuando el usuario se desplaza hacia abajo
-  $(window).scroll(function() {
-      if ($(this).scrollTop() > 200) {
-          $('#toTopButton').fadeIn();
-      } else {
-          $('#toTopButton').fadeOut();
-      }
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $('#toTopButton').fadeIn();
+    } else {
+      $('#toTopButton').fadeOut();
+    }
   });
 
   // Acción para desplazarse hacia arriba
-  $('#toTopButton').click(function() {
-      $('html, body').animate({scrollTop: 0}, 800);
+  $('#toTopButton').click(function () {
+    $('html, body').animate({ scrollTop: 0 }, 800);
   });
 });
 

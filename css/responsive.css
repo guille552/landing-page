@@ -178,32 +178,26 @@
 
   .effect-background {
     background-attachment: fixed;
-    /* Activa parallax */
   }
 
   .effect-container {
     max-width: 430px;
     flex-direction: column;
-    /* Elementos en columna */
   }
 
   .effect-left,
   .effect-right {
     flex: unset;
     width: 100%;
-    /* Cada uno toma el ancho completo */
     height: auto;
-    /* Ajusta la altura al contenido */
   }
 
   .effect-left {
     padding: 20px;
-    /* Reduce el padding */
   }
 
   .effect-left h1 {
     font-size: 1.5rem;
-    /* Reducir tamaño de texto */
   }
 
   .effect-left p {
@@ -315,14 +309,11 @@
 
   .modal-content {
     width: 90%;
-    /* Ajusta el ancho en pantallas pequeñas */
     padding: 15px;
-    /* Reduce padding para espacio limitado */
   }
 
   .modal {
     padding: 10px;
-    /* Asegura espacio alrededor */
   }
 
   h2 {
@@ -361,14 +352,11 @@
 
   .customers-logos {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columnas en vez de 5 */
     gap: 15px;
-    /* Espacio más pequeño entre logos */
   }
 
   .customers-logos img {
     max-width: 100px;
-    /* Logos más pequeños */
     max-height: 70px;
   }
 
@@ -376,49 +364,39 @@
 
   .news-section h2 {
     font-size: 20px;
-    /* Reducir tamaño de encabezado */
     margin-bottom: 15px;
   }
 
   .news-section p {
     font-size: 14px;
-    /* Reducir tamaño del texto */
     margin-bottom: 15px;
   }
 
   .news-container {
     flex-direction: column;
-    /* Cambiar a diseño vertical */
     gap: 15px;
-    /* Ajustar espacio entre tarjetas */
   }
 
   .news-card {
     width: 100%;
-    /* Tarjetas ocupan todo el ancho disponible */
     max-width: 300px;
     margin: 0 auto;
-    /* Centrar tarjetas */
   }
 
   .news-card img {
     height: 150px;
-    /* Ajustar altura de las imágenes */
   }
 
   .news-content h3 {
     font-size: 16px;
-    /* Reducir tamaño de los títulos */
   }
 
   .news-content p {
     font-size: 12px;
-    /* Reducir tamaño del texto */
   }
 
   .news-content button {
     padding: 8px 16px;
-    /* Botones más pequeños */
     font-size: 12px;
   }
 
@@ -426,60 +404,50 @@
 
   .footer-container {
     flex-direction: column;
-    /* Cambiar disposición a columna */
     align-items: center;
-    /* Centrar contenido */
     gap: 15px;
-    /* Espaciado entre secciones */
     padding: 10px;
-    /* Reducir padding general */
   }
 
   .footer-section h4 {
     font-size: 16px;
-    /* Reducir tamaño del título */
     margin-bottom: 8px;
   }
 
   .footer-section p {
     font-size: 12px;
-    /* Reducir tamaño del texto */
     text-align: center;
-    /* Centrar texto */
   }
 
   .footer-bottom {
     font-size: 12px;
-    /* Reducir tamaño del texto inferior */
     padding-top: 8px;
-    /* Ajustar espacio superior */
     margin-top: 15px;
-    /* Reducir margen superior */
   }
 
-/* BOTON STICKY */
+  /* BOTON STICKY */
 
-.sticky-button {
-  position: fixed;
-  bottom: 20px; /* Distancia desde el borde inferior */
-  right: 20px; /* Distancia desde el borde derecho */
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 50%; /* Redondear el botón */
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  z-index: 1000; /* Asegurar que se quede encima de otros elementos */
-}
+  .sticky-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
 
-.sticky-button img {
-  width: 30px;
-  height: 30px;
-}
+  .sticky-button img {
+    width: 30px;
+    height: 30px;
+  }
 
-.sticky-button:hover {
-  background-color: #f0f0f0;
-}
+  .sticky-button:hover {
+    background-color: #f0f0f0;
+  }
 
 }
